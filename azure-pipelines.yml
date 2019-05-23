@@ -42,6 +42,5 @@ stages:
           $(tag)
     - script: |
     docker build -t $(imageRepository).azurecr.io/$(imageName) .
-    az acr login --name $(imageRepository)
     docker push $(imageRepository).azurecr.io/$(imageName)
     
