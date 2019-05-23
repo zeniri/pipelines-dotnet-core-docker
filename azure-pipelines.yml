@@ -15,7 +15,7 @@ variables:
   containerRegistry: 'testazuredevops3.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
-  imageName: 'dotnetimage'
+  imageName: 'hello-world'
   
   # Agent VM image name
   vmImageName: 'ubuntu-16.04'
