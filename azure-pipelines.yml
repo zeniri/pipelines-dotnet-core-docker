@@ -43,5 +43,5 @@ stages:
     - script: |
     docker build -t $(imageRepository).azurecr.io/$(imageName) .
     az acr login --name $(imageRepository)
-    docker push $(imageRepository).azurecr.io/$(imageName):
+    docker push $(imageRepository).azurecr.io/$(imageName)
     
