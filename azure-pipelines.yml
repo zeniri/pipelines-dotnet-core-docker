@@ -41,6 +41,6 @@ stages:
         tags: |
           $(tag)
     - script: |
-    docker build -t $(imageRepository).azurecr.io/$(imageName) .
+    docker build -t $(imageRepository).azurecr.io/$(imageName) -f $(dockerfilePath)
     docker push $(imageRepository).azurecr.io/$(imageName)
     
