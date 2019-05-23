@@ -15,10 +15,13 @@ variables:
   containerRegistry: 'testazuredevops3.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
+  imageName: 'dotnetimage'
   
   # Agent VM image name
   vmImageName: 'ubuntu-16.04'
 
+
+        
 stages:
 - stage: Build
   displayName: Build and push stage
@@ -37,3 +40,8 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - script: |
+    docker build -t $(imageRepository).azurecr.io/$(imageName) .
+    az acr login --name $(imageRepository)
+    docker push $(imageRepository).azurecr.io/$(imageName):
+    
