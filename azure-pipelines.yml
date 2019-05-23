@@ -40,6 +40,4 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-    - script: |
-    docker build -t $(imageRepository).azurecr.io/$(imageName) .
-
+    
